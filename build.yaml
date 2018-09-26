@@ -5,4 +5,4 @@ repositories:
    - https://stocksoftware.artifactoryonline.com/stocksoftware/oss
 
 artifacts:
-  idea_codestyle: au.com.stocksoftware.idea.codestyle:idea-codestyle:xml:1.9
+  idea_codestyle: au.com.stocksoftware.idea.codestyle:idea-codestyle:xml:1.13
