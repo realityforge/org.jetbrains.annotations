@@ -1,6 +1,6 @@
 # org.jetbrains.annotations
 
-[![Build Status](https://secure.travis-ci.org/realityforge/org.jetbrains.annotations.png?branch=master)](http://travis-ci.org/realityforge/org.jetbrains.annotations)
+[![Build Status](https://secure.travis-ci.org/realityforge/org.jetbrains.annotations.svg?branch=master)](http://travis-ci.org/realityforge/org.jetbrains.annotations)
 [<img src="https://img.shields.io/maven-central/v/org.realityforge.org.jetbrains.annotations/org.jetbrains.annotations.svg?label=latest%20release"/>](http://search.maven.org/#search%7Cga%7C1%7Cg%3A%22org.realityforge.org.jetbrains.annotations%22%20a%3A%22org.jetbrains.annotations%22)
 ![GWT3/J2CL compatible](https://img.shields.io/badge/GWT3/J2CL-compatible-brightgreen.svg)
 
