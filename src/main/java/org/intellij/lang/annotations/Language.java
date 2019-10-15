@@ -16,10 +16,12 @@
 
 package org.intellij.lang.annotations;
 
+import org.jetbrains.annotations.NonNls;
+
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
-import org.jetbrains.annotations.NonNls;
+
 import static java.lang.annotation.ElementType.*;
 
 @Retention(RetentionPolicy.CLASS)

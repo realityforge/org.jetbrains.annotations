@@ -15,17 +15,14 @@
  */
 package org.intellij.lang.annotations;
 
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+import java.lang.annotation.*;
 
 /**
- * <p>This annotation intended to help IDEA to detect and auto-complete int and String constants used as an enumeration.
+ * <p>This annotation intended to help IntelliJ IDEA and other IDEs to detect and auto-complete int and String constants used as an enumeration.
  * For example, in the {@link java.awt.Label#Label(String, int)} constructor the <tt><b>alignment</b></tt> parameter can be one of the following
  * int constants: {@link java.awt.Label#LEFT}, {@link java.awt.Label#CENTER} or {@link java.awt.Label#RIGHT}
  *
- * <p>So, if <tt>@MagicConstant</tt> annotation applied to this constructor, IDEA will check the constructor usages for the allowed values.
+ * <p>So, if <tt>@MagicConstant</tt> annotation applied to this constructor, the IDE will check the constructor usages for the allowed values.
  * <p>E.g.<br>
  *  <pre>{@code
  * new Label("text", 0); // 0 is not allowed
@@ -41,7 +38,7 @@ import java.lang.annotation.Target;
  * <pre>{@code @MagicConstant(intValues = {TOP, CENTER, BOTTOM})
  * int textPosition;
  * }</pre>
- * IDEA will check expressions assigned to the variable for allowed values:
+ * The IDE will check expressions assigned to the variable for allowed values:
  * <pre>{@code
  *  textPosition = 0; // not allowed
  *  textPosition = TOP; // OK
@@ -54,7 +51,7 @@ import java.lang.annotation.Target;
  *  public native int getModifiers();
  * }</pre>
  *
- * IDEA will analyse getModifiers() method calls and check if its return value is used with allowed values:<br>
+ * The IDE will analyse getModifiers() method calls and check if its return value is used with allowed values:<br>
  * <pre>{@code
  *  if (aClass.getModifiers() == 3) // not allowed
  *  if (aClass.getModifiers() == Modifier.PUBLIC) // OK
@@ -68,7 +65,7 @@ import java.lang.annotation.Target;
  * <pre>{@code @MagicConstant(flags = {Font.PLAIN, Font.BOLD, Font.ITALIC}) }</pre>
  * <pre>{@code @interface FontStyle {} }</pre>
  *
- * IDEA will check constructs annotated with @FontStyle for allowed values:<br>
+ * The IDE will check constructs annotated with @FontStyle for allowed values:<br>
  * <tt>@FontStyle int myStyle = 3; // not allowed<br></tt>
  * <tt>@FontStyle int myStyle = Font.BOLD | Font.ITALIC; // OK</tt><br>
  *
@@ -100,15 +97,17 @@ public @interface MagicConstant {
   String[] stringValues() default {};
 
   /**
-   * @return allowed int flags (i.e. values (typically named constants) which can be combined with bitwise or operator (|).
-   *         Also 0 and -1 are considered allowed.
+   * @return allowed int flags (i.e. values (typically named constants) which can be combined with bitwise OR operator (|).
+   * The difference from the {@link #intValues()} is that flags are allowed to be combined (via plus:+ or bitwise OR: |) whereas values aren't.
+   * The literals "0" and "-1" are also allowed to denote absence and presense of all flags respectively.
+   *
    * E.g.
    * <pre><tt>
    * {@code @MagicConstant(flags = {HierarchyEvent.PARENT_CHANGED,HierarchyEvent.DISPLAYABILITY_CHANGED,HierarchyEvent.SHOWING_CHANGED})
    * int hFlags;
    *
-   * hFlags = 3; // not allowed
-   * if (hFlags & (HierarchyEvent.PARENT_CHANGED | HierarchyEvent.SHOWING_CHANGED) != 0); // OK
+   * hFlags = 3; // not allowed; should be "magic" constant.
+   * if (hFlags & (HierarchyEvent.PARENT_CHANGED | HierarchyEvent.SHOWING_CHANGED) != 0); // OK: combined several constants via bitwise OR
    * }</tt></pre>
    */
   long[] flags() default {};
@@ -121,22 +120,24 @@ public @interface MagicConstant {
    * {@code @MagicConstant(valuesFromClass = Cursor.class)
    * int cursorType;
    *
-   * cursorType = 11; // not allowed;
-   * cursorType = Cursor.E_RESIZE_CURSOR; // OK
+   * cursorType = 11; // not allowed; should be "magic" constant.
+   * cursorType = Cursor.E_RESIZE_CURSOR; // OK: "magic" constant used.
    * }</tt></pre>
    */
   Class valuesFromClass() default void.class;
 
   /**
    * @return allowed int flags which are defined in the specified class public static final constants.
+   * The difference from the {@link #valuesFromClass()} is that flags are allowed to be combined (via plus:+ or bitwise OR: |) whereas values aren't.
+   * The literals "0" and "-1" are also allowed to denote absence and presense of all flags respectively.
    *
    * E.g.
    * <pre><tt>
    * {@code @MagicConstant(flagsFromClass = java.awt.InputEvent.class)
    * int eventMask;
    *
-   * eventMask = 10; // not allowed;
-   * eventMask = InputEvent.CTRL_MASK | InputEvent.ALT_MASK; // OK
+   * eventMask = 10; // not allowed; should be "magic" constant.
+   * eventMask = InputEvent.CTRL_MASK | InputEvent.ALT_MASK; // OK: combined several constants via bitwise OR
    * }</tt></pre>
    */
   Class flagsFromClass() default void.class;
