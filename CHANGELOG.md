@@ -1,5 +1,7 @@
 # Change Log
 
+### Unreleased
+
 ### [v1.1.0](https://github.com/realityforge/org.jetbrains.annotations/tree/v1.1.0) (2019-10-16) · [Full Changelog](https://github.com/realityforge/org.jetbrains.annotations/compare/v1.0.0...v1.1.0)
 
 * Remove deployment from TravisCI infrastructure as it is no longer feasible.
