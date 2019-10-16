@@ -1,5 +1,6 @@
 require 'buildr/git_auto_version'
 require 'buildr/gpg'
+require 'buildr/gwt'
 
 desc 'org.jetbrains.annotations: A minimal, J2CL compatible org.jetbrains.annotations library'
 define 'org.jetbrains.annotations' do
@@ -14,7 +15,9 @@ define 'org.jetbrains.annotations' do
   pom.add_github_project('realityforge/org.jetbrains.annotations')
   pom.add_developer('realityforge', 'Peter Donald')
 
-  package(:jar).include(project._('src/main/java/org'))
+  gwt_enhance(project)
+
+  package(:jar)
   package(:sources)
   package(:javadoc)
 

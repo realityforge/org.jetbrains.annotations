@@ -4,6 +4,7 @@
 
 * Remove deployment from TravisCI infrastructure as it is no longer feasible.
 * Import source from the `org.jetbrains:annotations:jar:17.0.0` artifact available in the upstream repository [JetBrains/java-annotations](https://github.com/JetBrains/java-annotations).
+* Add build step that verifies that code can be successfully compiled by GWT.
 
 ### 1.0.0:
 
