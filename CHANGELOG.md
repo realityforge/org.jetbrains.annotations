@@ -1,5 +1,7 @@
 # Change Log
 
+### Unreleased
+
 ### [v1.2.0](https://github.com/realityforge/org.jetbrains.annotations/tree/v1.2.0) (2019-11-03) · [Full Changelog](https://github.com/realityforge/org.jetbrains.annotations/compare/v1.02.0...v1.2.0)
 
 ### [v1.02.0](https://github.com/realityforge/org.jetbrains.annotations/tree/v1.02.0) (2019-11-03) · [Full Changelog](https://github.com/realityforge/org.jetbrains.annotations/compare/v1.1.0...v1.02.0)
