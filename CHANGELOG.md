@@ -2,6 +2,8 @@
 
 ### Unreleased
 
+* Import `Unmodifiable` and `UnmodifiableView` from latest source version.
+
 ### [v1.2.0](https://github.com/realityforge/org.jetbrains.annotations/tree/v1.2.0) (2019-11-03) · [Full Changelog](https://github.com/realityforge/org.jetbrains.annotations/compare/v1.1.0...v1.2.0)
 
 * Update the source to the `18.0.0` version of the `org.jetbrains:annotations:jar` artifact available in the upstream repository [JetBrains/java-annotations](https://github.com/JetBrains/java-annotations).
