@@ -1,6 +1,6 @@
 # Change Log
 
-### Unreleased
+### [v1.3.0](https://github.com/realityforge/org.jetbrains.annotations/tree/v1.3.0) (2020-02-11) · [Full Changelog](https://github.com/realityforge/org.jetbrains.annotations/compare/v1.2.0...v1.3.0)
 
 * Import `Unmodifiable` and `UnmodifiableView` from latest source version.
 
