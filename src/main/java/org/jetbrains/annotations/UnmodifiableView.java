@@ -15,11 +15,7 @@
  */
 package org.jetbrains.annotations;
 
-import java.lang.annotation.Documented;
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+import java.lang.annotation.*;
 
 /**
  * An annotation which marks a {@link java.util.Collection} or {@link java.util.Map} type
@@ -31,8 +27,7 @@ import java.lang.annotation.Target;
  * @since 19.0.0
  */
 @Documented
-@Retention( RetentionPolicy.CLASS )
-@Target( ElementType.TYPE_USE )
-public @interface UnmodifiableView
-{
+@Retention(RetentionPolicy.CLASS)
+@Target({ElementType.TYPE_USE})
+public @interface UnmodifiableView {
 }
