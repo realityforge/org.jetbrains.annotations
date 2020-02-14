@@ -11,6 +11,7 @@ define 'org.jetbrains.annotations' do
 
   project.version = ENV['PRODUCT_VERSION'] if ENV['PRODUCT_VERSION']
 
+  doc.options['Xdoclint:none'] = true
   pom.add_apache_v2_license
   pom.add_github_project('realityforge/org.jetbrains.annotations')
   pom.add_developer('realityforge', 'Peter Donald')
