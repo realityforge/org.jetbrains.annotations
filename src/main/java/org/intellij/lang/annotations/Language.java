@@ -1,11 +1,11 @@
 /*
- * Copyright 2006 Sascha Weinreuter
+ * Copyright 2000-2020 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -29,14 +29,17 @@ import static java.lang.annotation.ElementType.*;
  * Code editors may use this annotation to enable syntax highlighting, code completion and other features
  * inside the literals that assigned to the annotated variables, passed as arguments to the annotated parameters,
  * or returned from the annotated methods.
- *
- * This annotation also could be used as a meta-annotation, to define other annotations for convenience.
+ * <p>
+ * This annotation also could be used as a meta-annotation, to define derived annotations for convenience.
  * E.g. the following annotation could be defined to annotate the strings that represent Java methods:
  *
  * <pre>
  *   &#64;Language(value = "JAVA", prefix = "class X{", suffix = "}")
  *   &#64;interface JavaMethod {}
  * </pre>
+ * <p>
+ * Note that using the derived annotation as meta-annotation is not supported.
+ * Meta-annotation works only one level deep.
  */
 @Retention(RetentionPolicy.CLASS)
 @Target({ METHOD, FIELD, PARAMETER, LOCAL_VARIABLE, ANNOTATION_TYPE })

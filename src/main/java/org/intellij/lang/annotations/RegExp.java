@@ -1,11 +1,11 @@
 /*
- * Copyright 2006 Sascha Weinreuter
+ * Copyright 2000-2020 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *     http://www.apache.org/licenses/LICENSE-2.0
+ * https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 package org.intellij.lang.annotations;
+
+import org.jetbrains.annotations.NonNls;
 
 import static java.lang.annotation.ElementType.*;
 import java.lang.annotation.Retention;
@@ -36,9 +38,9 @@ public @interface RegExp {
     /**
      * A constant prefix that is assumed to be implicitly added before the regular expression.
      */
-    String prefix() default "";
+    @NonNls String prefix() default "";
     /**
      * A constant suffix that is assumed to be implicitly added after the regular expression.
      */
-    String suffix() default "";
+    @NonNls String suffix() default "";
 }

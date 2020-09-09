@@ -1,11 +1,11 @@
 /*
- * Copyright 2000-2014 JetBrains s.r.o.
+ * Copyright 2000-2020 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http://www.apache.org/licenses/LICENSE-2.0
+ * https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 package org.intellij.lang.annotations;
+
+import org.jetbrains.annotations.NonNls;
 
 import java.lang.annotation.*;
 
@@ -94,7 +96,7 @@ public @interface MagicConstant {
   /**
    * @return String values (typically named constants) which are allowed here.
    */
-  String[] stringValues() default {};
+  @NonNls String[] stringValues() default {};
 
   /**
    * @return allowed int flags (i.e. values (typically named constants) which can be combined with bitwise OR operator (|).
@@ -124,7 +126,7 @@ public @interface MagicConstant {
    * cursorType = Cursor.E_RESIZE_CURSOR; // OK: "magic" constant used.
    * }</tt></pre>
    */
-  Class valuesFromClass() default void.class;
+  Class<?> valuesFromClass() default void.class;
 
   /**
    * @return allowed int flags which are defined in the specified class public static final constants.
@@ -140,5 +142,5 @@ public @interface MagicConstant {
    * eventMask = InputEvent.CTRL_MASK | InputEvent.ALT_MASK; // OK: combined several constants via bitwise OR
    * }</tt></pre>
    */
-  Class flagsFromClass() default void.class;
+  Class<?> flagsFromClass() default void.class;
 }

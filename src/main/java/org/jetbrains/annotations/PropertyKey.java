@@ -1,11 +1,11 @@
 /*
- * Copyright 2000-2009 JetBrains s.r.o.
+ * Copyright 2000-2020 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- * http://www.apache.org/licenses/LICENSE-2.0
+ * https://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -19,15 +19,15 @@ package org.jetbrains.annotations;
 import java.lang.annotation.*;
 
 /**
- * Specifies that a method parameter accepts arguments which must be valid property
- * keys in a specific resource bundle. When a string literal which is not a property
- * key in the specified bundle is passed as a parameter, IntelliJ IDEA highlights
- * it as an error. The annotation is also used to provide completion in string literals
- * passed as parameters.
+ * Specifies that a method parameter, local variable, field or a method return value
+ * must be a valid property key in a specific resource bundle. When a string literal
+ * which is not a property key in the specified bundle is passed as a parameter,
+ * static analyzers may highlight it as an error. The annotation is also could be used
+ * by IDEs to provide completion in string literals passed as parameters.
  */
 @Documented
 @Retention(RetentionPolicy.CLASS)
-@Target({ElementType.PARAMETER, ElementType.LOCAL_VARIABLE, ElementType.FIELD})
+@Target({ElementType.PARAMETER, ElementType.LOCAL_VARIABLE, ElementType.FIELD, ElementType.TYPE_USE})
 public @interface PropertyKey {
   /**
    * The full-qualified name of the resource bundle in which the property keys must
@@ -35,5 +35,5 @@ public @interface PropertyKey {
    * directory where the resource bundle is located and the base name of the resource
    * bundle (with no locale specifier or extension), separated with a dot.
    */
-  String resourceBundle();
+  @NonNls String resourceBundle();
 }

@@ -2,6 +2,8 @@
 
 ### Unreleased
 
+* Synchronize to version `v20.1.0`
+
 ### [v1.5.0](https://github.com/realityforge/org.jetbrains.annotations/tree/v1.5.0) (2020-02-18) · [Full Changelog](https://github.com/realityforge/org.jetbrains.annotations/compare/v1.4.0...v1.5.0)
 
 * Synchronize to version `v19.0.0`
