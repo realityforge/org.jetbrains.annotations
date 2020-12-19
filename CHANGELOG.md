@@ -2,6 +2,8 @@
 
 ### Unreleased
 
+* Remove accidental additions to POM.
+
 ### [v1.6.0](https://github.com/realityforge/org.jetbrains.annotations/tree/v1.6.0) (2020-09-09) · [Full Changelog](https://github.com/realityforge/org.jetbrains.annotations/compare/v1.5.0...v1.6.0)
 
 * Synchronize to version `v20.1.0`

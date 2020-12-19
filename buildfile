@@ -15,6 +15,7 @@ define 'org.jetbrains.annotations' do
   pom.add_apache_v2_license
   pom.add_github_project('realityforge/org.jetbrains.annotations')
   pom.add_developer('realityforge', 'Peter Donald')
+  pom.dependency_filter = Proc.new { |_| false }
 
   gwt_enhance(project)
 
