@@ -1,5 +1,7 @@
 # Change Log
 
+### Unreleased
+
 ### [v1.7.0](https://github.com/realityforge/org.jetbrains.annotations/tree/v1.7.0) (2020-12-19) · [Full Changelog](https://github.com/realityforge/org.jetbrains.annotations/compare/v1.6.0...v1.7.0)
 
 * Remove accidental additions to POM.
