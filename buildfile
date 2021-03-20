@@ -2,6 +2,8 @@ require 'buildr/git_auto_version'
 require 'buildr/gpg'
 require 'buildr/gwt'
 
+Buildr::MavenCentral.define_publish_tasks(:profile_name => 'org.realityforge', :username => 'realityforge')
+
 desc 'org.jetbrains.annotations: A minimal, J2CL compatible org.jetbrains.annotations library'
 define 'org.jetbrains.annotations' do
   project.group = 'org.realityforge.org.jetbrains.annotations'
